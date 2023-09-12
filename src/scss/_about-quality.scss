@@ -1,0 +1,94 @@
+.qualities-section {
+  height: auto;
+  width: 100%;
+  background-image: url("../assets/images/AboutQualityBackground.png");
+  position: relative;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .overlay-bg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background-color: $overlayColor;
+  }
+
+  .overlay-screen {
+    position: relative;
+    z-index: 2;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    top: 0;
+    padding: 10rem 0;
+    gap: 3rem;
+
+    @media screen and (max-width: 1200px) {
+      padding: 7rem 0;
+    }
+
+    @media screen and (max-width: 500px) {
+      flex-direction: column;
+      width: 90%;
+    }
+
+    .quality-wrapper {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      height: auto;
+
+      .quality-content-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        .quality-title {
+          font-size: 2.3rem;
+          line-height: 150%;
+
+          @media screen and (max-width: 1200px) {
+            font-size: 1.5rem;
+          }
+
+          @media screen and (max-width: 800px) {
+            font-size: 1.2rem;
+          }
+        }
+
+        .quality-description {
+          font-size: 1.1rem;
+          line-height: 160%;
+
+          @media screen and (max-width: 1200px) {
+            font-size: 1rem;
+          }
+          @media screen and (max-width: 800px) {
+            font-size: 0.8rem;
+          }
+        }
+      }
+
+      .quality-image {
+        aspect-ratio: 9/10;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .reverse {
+      flex-direction: column-reverse;
+
+      @media screen and (max-width: 500px) {
+        flex-direction: column;
+      }
+    }
+  }
+}

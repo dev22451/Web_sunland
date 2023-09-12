@@ -1,0 +1,269 @@
+.contact-form-section {
+  width: 100%;
+  height: auto;
+  position: relative;
+  background: url("../assets/images/ContactFormBackground.png");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media screen and (max-width: 800px) {
+    background-position: left;
+  }
+
+  .overlay-bg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background-color: $overlayColor;
+  }
+
+  .overlay-screen {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    padding: 3rem 0;
+
+    .content-wrapper {
+      padding: 3rem 0;
+      width: 80%;
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+      justify-content: space-between;
+
+      @media screen and (max-width: 1200px) {
+        gap: 2rem;
+      }
+
+      @media screen and (max-width: 800px) {
+        gap: 2rem;
+      }
+
+      @media screen and (max-width: 500px) {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 90%;
+      }
+
+      .contact-section-left-pane {
+        width: 50%;
+        height: inherit;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        @media screen and (max-width: 1200px) {
+          width: 55%;
+        }
+
+        @media screen and (max-width: 800px) {
+          width: 50%;
+          gap: 1.2rem;
+        }
+
+        @media screen and (max-width: 500px) {
+          width: 100%;
+          gap: 1.5rem;
+        }
+
+        .contact-section-title-container {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          width: 100%;
+
+          .title {
+            text-transform: capitalize;
+            font-size: 1.5rem;
+
+            @media screen and (max-width: 1200px) {
+              font-size: 1.1rem;
+            }
+
+            @media screen and (max-width: 800px) {
+              font-size: 1.1rem;
+            }
+
+            @media screen and (max-width: 500px) {
+              font-size: 1rem;
+            }
+          }
+
+          .sub-title {
+            font-size: 4rem;
+            line-height: 110%;
+
+            @media screen and (max-width: 1200px) {
+              font-size: 2.7rem;
+            }
+
+            @media screen and (max-width: 800px) {
+              font-size: 1.6rem;
+            }
+
+            @media screen and (max-width: 500px) {
+              font-size: 2rem;
+            }
+          }
+        }
+
+        .description {
+          font-size: 1.2rem;
+          line-height: 150%;
+          width: 70%;
+
+          @media screen and (max-width: 1200px) {
+            width: 95%;
+            font-size: 1rem;
+            line-height: 180%;
+          }
+
+          @media screen and (max-width: 800px) {
+            width: 95%;
+            font-size: 0.9rem;
+          }
+
+          @media screen and (max-width: 500px) {
+            width: 100%;
+          }
+        }
+      }
+
+      .contact-section-right-pane {
+        // width: 40%;
+        height: 100%;
+
+        @media screen and (max-width: 500px) {
+          width: 100%;
+        }
+
+        .contact-form-container {
+          height: 100%;
+          padding: 4rem;
+          background-color: $whiteColor;
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+
+          @media screen and (max-width: 1200px) {
+            padding: 2.5rem;
+          }
+
+          @media screen and (max-width: 800px) {
+            padding: 2rem;
+          }
+
+          @media screen and (max-width: 500px) {
+            padding: 1rem;
+          }
+
+          .field-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+            label {
+              color: $textBlackColor;
+              font-weight: 600;
+
+              @media screen and (max-width: 500px) {
+                font-size: 0.8rem;
+              }
+            }
+            .select-component {
+              width: 100%;
+
+              .css-13cymwt-control {
+                box-shadow: 0 0 0 1px $secondaryThemeColor;
+                border-color: $secondaryThemeColor;
+              }
+
+              .css-10wo9uf-option {
+                color: $darkShadeColor !important;
+              }
+
+              .css-d7l1ni-option,
+              .css-tr4s17-option {
+                color: $whiteColor !important;
+                background-color: $secondaryThemeColor !important;
+              }
+              @media screen and (max-width: 1200px) {
+                font-size: 0.8rem;
+              }
+
+              @media screen and (max-width: 500px) {
+                font-size: 0.7rem;
+              }
+            }
+            input,
+            textarea {
+              padding: 9px 8px;
+              border-radius: 4px;
+              border: 1px solid $fieldBorder;
+              font-size: 1rem;
+              font-family: "Montserrat", sans-serif;
+
+              &:focus {
+                outline-color: $secondaryThemeColor;
+              }
+
+              @media screen and (max-width: 1200px) {
+                font-size: 0.8rem;
+              }
+
+              @media screen and (max-width: 500px) {
+                font-size: 0.7rem;
+              }
+            }
+
+            .inline-fields-wrapper {
+              display: flex;
+              gap: 0.7rem;
+              width: 100%;
+              input {
+                width: 100%;
+                &::-webkit-outer-spin-button,
+                &::-webkit-inner-spin-button {
+                  -webkit-appearance: none;
+                  margin: 0;
+                }
+              }
+
+              @media screen and (max-width: 500px) {
+                flex-direction: column;
+
+                input {
+                  width: auto;
+                }
+              }
+            }
+          }
+
+          .form-submit-button {
+            background-color: $darkShadeColor;
+            color: $whiteColor;
+            font-family: inherit;
+            padding: 1rem;
+            border-radius: 4px;
+            font-size: 1rem;
+            margin-top: 1rem;
+            cursor: pointer;
+
+            @media screen and (max-width: 1200px) {
+              padding: 0.7rem;
+              margin-top: 0.5rem;
+              font-size: 0.8rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

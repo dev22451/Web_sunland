@@ -1,0 +1,241 @@
+// GET QUOTE MODAL
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #131313;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  background-color: $whiteColor;
+  border-radius: 14px;
+  outline: none;
+  height: fit-content;
+  width: 50vw;
+  max-height: 95vh;
+  padding: 2rem;
+
+  @media screen and (max-width: 1400px) {
+    width: 70vw;
+  }
+
+  @media screen and (max-width: 800px) {
+    width: 80vw;
+  }
+
+  @media screen and (max-width: 500px) {
+    width: 80vw;
+  }
+
+  @media screen and (max-width: 350px) {
+    width: 70vw;
+  }
+}
+
+.react-modal-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    font-family: "Montserrat", sans-serif;
+
+    .modal-title {
+      font-size: 2rem;
+
+      @media screen and (max-width: 400px) {
+        font-size: 1.2rem;
+      }
+    }
+
+    .modal-close-icon-container {
+      cursor: pointer;
+
+      @media screen and (max-width: 400px) {
+        svg {
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+  }
+
+  .modal-body-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    .input-fields-wrapper {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+
+      @media screen and (max-width: 500px) {
+        grid-template-columns: auto;
+      }
+
+      input {
+        padding: 1rem;
+        width: 100%;
+        font-size: 1rem;
+        font-family: inherit;
+        box-sizing: border-box;
+        border: 1px solid $darkShadeColor;
+
+        &:-webkit-autofill,
+        &:-webkit-autofill:focus {
+          -webkit-box-shadow: 0 0 0 30px $whiteColor inset !important;
+        }
+        &:hover {
+          border: 1px solid $secondaryThemeColor;
+        }
+
+        &:focus {
+          outline-color: $secondaryThemeColor;
+        }
+
+        @media screen and (max-width: 400px) {
+          padding: 0.7rem;
+          font-size: 0.8rem;
+        }
+      }
+    }
+
+    textarea,
+    input {
+      padding: 1rem;
+      height: auto;
+      font-family: inherit;
+      font-size: 1rem;
+      resize: none;
+      border: 1px solid $darkShadeColor;
+
+      &:-webkit-autofill,
+      &:-webkit-autofill:focus {
+        -webkit-box-shadow: 0 0 0 30px $whiteColor inset !important;
+      }
+
+      &:hover {
+        border: 1px solid $secondaryThemeColor;
+      }
+
+      &:focus {
+        outline-color: $secondaryThemeColor;
+      }
+
+      @media screen and (max-width: 400px) {
+        padding: 0.7rem;
+        font-size: 0.8rem;
+      }
+    }
+
+    .submit-button {
+      background-color: transparent;
+      width: fit-content;
+      padding: 1rem 2rem;
+      text-transform: uppercase;
+      font-family: inherit;
+      font-weight: 600;
+      border: 2px solid $secondaryThemeColor;
+      color: $secondaryThemeColor;
+      cursor: pointer;
+
+      &:disabled {
+        filter: grayscale(1);
+        opacity: 0.4;
+        cursor: not-allowed;
+      }
+
+      @media screen and (max-width: 400px) {
+        padding: 0.7rem 1rem;
+        font-size: 0.7rem;
+      }
+    }
+
+    .image-upload-button {
+      width: 100%;
+      padding: 3rem 0;
+      border: 1px dashed $darkShadeColor;
+      background-color: transparent;
+      font-family: inherit;
+
+      svg {
+        width: 60px;
+        height: 60px;
+        opacity: 0.4;
+      }
+
+      &:hover {
+        border-color: $secondaryThemeColor;
+        cursor: grab;
+
+        svg {
+          * {
+            stroke: $secondaryThemeColor !important;
+          }
+        }
+      }
+
+      @media screen and (max-width: 500px) {
+        padding: 1.5rem 0;
+
+        svg {
+          width: 40px;
+          height: 40px;
+        }
+      }
+    }
+
+    .upload__image-wrapper {
+      h4 {
+        padding: 1rem 0;
+      }
+      .images-preview-wrapper {
+        padding: 1rem 0;
+        display: flex;
+        width: 100%;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .image-item {
+        position: relative;
+        aspect-ratio: 1/1;
+
+        img {
+          object-fit: cover;
+          height: 100px;
+        }
+
+        div {
+          position: absolute;
+          top: -10px;
+          right: -10px;
+
+          svg {
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+    }
+  }
+}

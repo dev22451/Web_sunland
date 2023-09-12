@@ -1,0 +1,253 @@
+.renting-services-section {
+  height: auto;
+  width: 100%;
+  background-image: url("../assets/images/RentingServicesBackground.png");
+  position: relative;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .overlay-bg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background-color: $overlayColor;
+  }
+  .overlay-screen {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    padding: 3rem 0;
+
+    .service-carousel-container {
+      position: relative;
+      width: 100%;
+      margin: 3rem 0;
+
+      .custom-dot-list-style {
+        .react-multi-carousel-dot {
+          button {
+            background-color: $lightGray;
+            border: none;
+          }
+        }
+        .react-multi-carousel-dot--active {
+          button {
+            background-color: $secondaryThemeColor;
+            border: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Service card styles
+
+.service-card-wrapper {
+  width: auto;
+  background: $whiteColor;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin: 1rem;
+
+  @media screen and (max-width: 500px) {
+    margin: 0.5rem;
+  }
+
+  @media screen and (max-width: 350px) {
+    margin: 0;
+    padding: 0.7rem;
+  }
+
+  .service-card-head-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    .service-card-image {
+      object-fit: fill;
+      border-radius: 0.7rem;
+      width: 100%;
+    }
+
+    .service-tag {
+      position: absolute;
+      color: $darkShadeColor;
+      background-color: $whiteColor;
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 0.4rem 0.6rem;
+      border-radius: 5px;
+      bottom: 10px;
+      left: 10px;
+
+      @media screen and (max-width: 800px) {
+        font-size: 0.8rem;
+      }
+
+      @media screen and (max-width: 350px) {
+        font-size: 0.7rem;
+      }
+    }
+  }
+
+  .service-card-body-container {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+    gap: 1rem;
+
+    @media screen and (max-width: 350px) {
+      gap: 0.8rem;
+    }
+
+    .service-details-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 0.3rem;
+
+      .location-wrapper {
+        display: flex;
+        gap: 0.5rem;
+        color: $textBlackColor;
+        align-items: center;
+
+        @media screen and (max-width: 800px) {
+          .location {
+            font-size: 0.8rem;
+          }
+        }
+
+        @media screen and (max-width: 350px) {
+          .location {
+            font-size: 0.8rem;
+          }
+        }
+      }
+
+      .property-name {
+        color: $textBlackColor;
+        font-weight: 700;
+        font-size: 1.5rem;
+
+        @media screen and (max-width: 800px) {
+          font-size: 1.2rem;
+        }
+
+        @media screen and (max-width: 350px) {
+          font-size: 1.2rem;
+        }
+      }
+
+      .bhk-details {
+        color: $textBlackColor;
+
+        @media screen and (max-width: 800px) {
+          font-size: 0.8rem;
+        }
+
+        @media screen and (max-width: 350px) {
+          font-size: 0.8rem;
+        }
+      }
+    }
+
+    .divider-line {
+      border-top: 1px solid;
+    }
+
+    .service-amenities-wrapper {
+      display: flex;
+      overflow: auto;
+      gap: 0.5rem;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+
+      .amenity-badge {
+        width: 2.5rem;
+        aspect-ratio: 1/1;
+        height: 2.5rem;
+        border: 0.6px solid $textWhiteColor;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $lightGray;
+
+        @media screen and (max-width: 350px) {
+          width: 2rem;
+          height: 2rem;
+          svg {
+            width: 1rem;
+            height: 1rem;
+          }
+        }
+      }
+    }
+
+    .service-card-footer-action-button-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30%;
+
+      @media screen and (max-width: 500px) {
+        gap: 20%;
+      }
+
+      a {
+        text-decoration: none;
+        width: 45%;
+        width: 100%;
+      }
+
+      button {
+        width: 100%;
+        color: $whiteColor;
+        padding: 0.8rem 1rem;
+        font-size: 1rem;
+        font-weight: 600;
+        border: none;
+        border-radius: 5px;
+        white-space: nowrap;
+        font-family: inherit;
+        width: 100%;
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        @media screen and (max-width: 350px) {
+          font-size: 0.7rem;
+          padding: 0.8rem 1.5rem;
+        }
+      }
+
+      .call-now-button {
+        background-color: $secondaryThemeColor;
+        width: 100%;
+      }
+
+      .enquire-button {
+        background-color: $darkShadeColor;
+        width: 100%;
+      }
+    }
+  }
+}

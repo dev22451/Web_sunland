@@ -1,0 +1,145 @@
+// Common styles
+.banner-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+// HOME BANNER STYLES
+.home-banner-wrapper {
+  height: 100vh;
+  .myVideo {
+    position: absolute;
+    // top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    clip-path: polygon(0 0, 100% 0, 100% 81%, 0% 100%) !important;
+
+    @media screen and (max-width: 500px) {
+      clip-path: polygon(0 0, 100% 0, 100% 94%, 0 100%);
+    }
+
+    @media screen and (max-width: 400px) {
+      clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+    }
+
+    @media screen and (max-width: 350px) {
+      clip-path: polygon(0 0, 100% 0, 100% 95.5%, 0 100%);
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    background-size: cover;
+    background-position: left;
+  }
+
+  .overlay-screen {
+    background-color: $darkOverlayColor;
+    position: absolute;
+    height: inherit;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .banner-text-wrapper {
+      width: 45%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 2rem;
+      transition: all 0.3s ease-in;
+
+      p {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        gap: 0.3rem;
+      }
+
+      @media screen and (max-width: 1440px) {
+        width: 45%;
+      }
+
+      @media screen and (max-width: 1024px) {
+        width: 65%;
+      }
+
+      @media screen and (max-width: 768px) {
+        width: 80%;
+      }
+
+      @media screen and (max-width: 450px) {
+        width: 90%;
+      }
+
+      h2 {
+        font-size: 3rem;
+        text-align: center;
+
+        @media screen and (max-width: 450px) {
+          font-size: 1.5rem;
+        }
+
+        @media screen and (max-width: 350px) {
+          font-size: 1.3rem;
+        }
+      }
+      .button-group {
+        display: flex;
+        gap: 1rem;
+        font-size: "Montserrat", sans-serif;
+
+        button {
+          color: $whiteColor;
+          border-radius: 10px;
+          background: transparent;
+          padding: 0.8rem 2rem;
+          font-size: 1.2rem;
+          cursor: pointer;
+          outline: none;
+          font-family: inherit;
+          font-weight: 600;
+          white-space: nowrap;
+
+          @media screen and (max-width: 450px) {
+            font-size: 0.8rem;
+          }
+
+          @media screen and (max-width: 350px) {
+            padding: 0.7rem 1.5rem;
+          }
+        }
+
+        .contact-button {
+          border: 2px solid $secondaryThemeColor;
+        }
+
+        .learn-more-button {
+          border: 2px solid $primaryThemeColor;
+          color: $primaryThemeColor;
+        }
+      }
+    }
+  }
+
+  .clipped {
+    clip-path: polygon(0 0, 100% 0, 100% 81%, 0% 100%) !important;
+
+    @media screen and (max-width: 500px) {
+      clip-path: polygon(0 0, 100% 0, 100% 94%, 0 100%);
+    }
+
+    @media screen and (max-width: 400px) {
+      clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+    }
+
+    @media screen and (max-width: 350px) {
+      clip-path: polygon(0 0, 100% 0, 100% 95.5%, 0 100%);
+    }
+  }
+}

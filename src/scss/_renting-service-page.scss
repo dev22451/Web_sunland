@@ -1,0 +1,52 @@
+.renting-service-page-grid-container {
+  width: 80%;
+  margin: auto;
+
+  @media screen and (max-width: 500px) {
+    width: 90%;
+  }
+
+  .renting-service-page-grid-wrapper {
+    padding: 7rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    .grid-detail-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      .title {
+        font-size: 2.4rem;
+        line-height: 150%;
+      }
+
+      .description {
+        font-size: 1rem;
+        line-height: 170%;
+        width: 70%;
+
+        @media screen and (max-width: 500px) {
+          width: 100%;
+        }
+      }
+    }
+
+    .cards-grid-wrapper {
+      width: 100%;
+      display: grid;
+      flex-wrap: wrap;
+      grid-template-columns: repeat(auto-fill, 32%);
+      gap: 1rem;
+
+      @media screen and (max-width: 1200px) {
+        grid-template-columns: repeat(auto-fill, 48%);
+      }
+
+      @media screen and (max-width: 500px) {
+        grid-template-columns: repeat(auto-fill, 100%);
+      }
+    }
+  }
+}
