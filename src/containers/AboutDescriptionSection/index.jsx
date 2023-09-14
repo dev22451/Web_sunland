@@ -1,6 +1,11 @@
-import { AboutDescription } from "../../assets";
+import { Link, useLocation } from "react-router-dom";
+import { AboutDescription, CloseModalIcon } from "../../assets";
 import { Fade } from "react-reveal";
+import { useState } from "react";
+import ReactModal from "react-modal";
 export const AboutDescriptionSection = () => {
+  const location = useLocation();
+  const [showModal, setShowModal] = useState(false);
   return (
     <>
       <section className="about-description-section">
@@ -35,7 +40,15 @@ export const AboutDescriptionSection = () => {
                     </p>
                   </Fade>
                   <Fade bottom>
-                    <button>Learn More</button>
+                    {location.pathname === "/" ? (
+                      <Link to="/about">
+                        <button>Learn More</button>
+                      </Link>
+                    ) : (
+                      <button onClick={() => setShowModal(true)}>
+                        Chairman Message
+                      </button>
+                    )}
                   </Fade>
                 </div>
               </div>
@@ -48,6 +61,32 @@ export const AboutDescriptionSection = () => {
           </div>
         </div>
       </section>
+      <ReactModal
+        className="modal-content"
+        overlayClassName="modal-overlay"
+        isOpen={showModal}
+      >
+        <div className="react-modal-content-wrapper">
+          <div className="modal-header">
+            <h4 className="modal-title"> Message from our Chairman</h4>
+            <div
+              className="modal-close-icon-container"
+              onClick={() => setShowModal(false)}
+            >
+              <CloseModalIcon />
+            </div>
+          </div>
+          <div className="modal-body-container" style={{ lineHeight: "170%" }}>
+            “Community-Centric Approach” SUNLAND's legacy is not solely built on
+            bricks and mortar; it's anchored in the communities it nurtured. The
+            company has consistently demonstrated a deep sense of responsibility
+            toward creating inclusive living spaces that foster a sense of
+            belonging. Its emphasis on green spaces, attention to architecture
+            details, and smart infrastructure has redefined modern living in Abu
+            Dhabi.
+          </div>
+        </div>
+      </ReactModal>
     </>
   );
 };

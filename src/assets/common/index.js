@@ -327,9 +327,9 @@ export const contactDetailsData = [
   },
   {
     icon: <AddressIcon />,
-    link: "https://goo.gl/maps/8yqHc6C634rjQHwA9",
+    link: "https://goo.gl/maps/rvDNpXRvviC5WPfJ8",
     title: "Address",
-    detail: "445 Main Street,New York CA-12325",
+    detail: "Abu Dhabi, Rabdan Mall, 2nd floor, Office 205",
   },
 ];
 

@@ -1,10 +1,5 @@
 import ReactModal from "react-modal";
-import {
-  CloseModalIcon,
-  Lift,
-  Location,
-  RentingServiceCardImage,
-} from "../../assets";
+import { CloseModalIcon, Location } from "../../assets";
 import { useState } from "react";
 import { Email, generateEmailBody } from "../../assets/common";
 
